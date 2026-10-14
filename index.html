@@ -1,0 +1,16 @@
+function startSession(){
+
+    if(state.students.length < 1){
+        alert("Cadastre pelo menos um aluno para iniciar.");
+        return;
+    }
+
+    state.sessionStarted = true;
+    state.phase = 0;
+    state.queues = {};
+
+    createQueues();
+
+    saveState();
+    render();
+}
